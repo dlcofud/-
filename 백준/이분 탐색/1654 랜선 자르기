@@ -1,0 +1,20 @@
+import sys
+input=sys.stdin.readline
+k,n=map(int,input().split(" "))
+cm=[]
+for _ in range(k):
+    b=int(input())
+    cm.append(b)
+start=1
+end=max(cm)
+while start<=end:
+    mid=(start+end)//2
+    number=0
+    for i in cm:
+        if i>=mid:
+            number+=i//mid
+    if number>=n:
+        start=mid+1
+    else:
+        end=mid-1
+print(end)
