@@ -1,0 +1,20 @@
+n,m=map(int,input().split(" "))
+b=list(map(int,input().split(" ")))
+start=0
+end=max(b)
+while start<=end:
+    mid=(end+start)//2
+    sum=0
+    for i in b:
+        if i>=mid:
+            sum+=i-mid
+    if sum>=m:
+        start=mid+1
+    else:
+        end=mid-1
+print(end)
+#이분 탐색이란 시작점고 기준의 중가을 잡아 다시 나누는 것
+#이 코드는 나무의 길이 중 큰것을 end값으로 잡음
+#만약 mid로 자른 값이 m보다 크면 start값은 mid+1
+#아니면 end값이 mid-1
+#계속 진행하다 조건 불만족=>end 값 도출
