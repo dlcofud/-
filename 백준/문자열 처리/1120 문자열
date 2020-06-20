@@ -1,0 +1,10 @@
+a=input()
+b=[]
+for x in range(len(a)):
+    if x!=0:
+        b.append(a[x:])
+    else:
+        b.append(a)
+b.sort()
+for i in b:
+    print(i)
