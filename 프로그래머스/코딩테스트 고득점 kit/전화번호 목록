@@ -1,0 +1,20 @@
+def solution(phone_book):
+    answer=True
+    for i in phone_book:
+        for x in phone_book:
+            if i!=x:
+                if len(i)<len(x):
+                    if i==x[:len(i)]:
+                        answer=False
+                        break
+                elif len(i)>len(x):
+                    if x==i[:len(x)]:
+                        answer=False
+                        break
+                else:
+                    if x==i:
+                        answer=False
+                        break
+        if answer==False:
+            break
+    return answer
