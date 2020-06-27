@@ -1,0 +1,13 @@
+def solution(participant, completion):
+    total1=0
+    total2=0
+    for i in (participant):
+        total1+=hash(i)
+    for i in (completion):
+        total2+=hash(i)
+    a=total1-total2
+    for i in (participant):
+        if hash(i)==a:
+            answer=i
+            break
+    return answer
