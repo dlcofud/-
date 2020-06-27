@@ -1,0 +1,19 @@
+import sys
+def solution(budgets, M):
+    start=0
+    end=max(budgets)
+    while start<=end:
+        mid=(start+end)//2
+        sum1=0
+        for x in budgets:
+            if x>=mid:
+                sum1=sum1+mid
+            else:
+                sum1=sum1+x
+        if sum1<=M:
+            start=mid+1
+            answer = mid
+        else:
+            end=mid-1
+        print(sum1, mid)
+    return answer
