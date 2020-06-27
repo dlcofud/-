@@ -1,0 +1,15 @@
+def solution(n, times):
+    start=0
+    end=max(times)*n
+    while start<=end:
+        mid=(start+end)//2
+        people=0
+        for x in times:
+            people+=mid//x
+        print(start,mid,end)
+        if people>=n:
+            end=mid-1
+            answer = mid
+        elif people<n:
+            start=mid+1
+    return answer
