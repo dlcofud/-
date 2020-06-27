@@ -1,0 +1,24 @@
+m1,m2=map(int,input().split(" "))
+n1=input()
+n2=input()
+t=int(input())
+s=[]
+for i in range(1,len(n1)+1):
+    s.append(n1[len(n1)-i])
+for i in n2:
+    s.append(i)
+while t>0:
+    turn=[]
+    for x in range(m1+m2-1):
+        if s[x] in n1 and s[x+1] in n2:
+            if turn.count(s[x])==0 and turn.count(s[x+1])==0:
+                text=s[x]
+                s[x]=s[x+1]
+                s[x+1]=text
+                turn.append(s[x])
+                turn.append(s[x+1])
+    t-=1
+    if t==0:
+        break
+for i in s:
+    print(i,end='')
